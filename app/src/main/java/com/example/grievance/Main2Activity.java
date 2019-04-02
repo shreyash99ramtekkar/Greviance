@@ -1,11 +1,13 @@
 package com.example.grievance;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
+import android.util.AttributeSet;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
@@ -14,10 +16,13 @@ import android.widget.Toast;
 public class Main2Activity extends AppCompatActivity
 {
 
+
     private TextView mTextMessage;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
-            = new BottomNavigationView.OnNavigationItemSelectedListener() {
+            = new BottomNavigationView.OnNavigationItemSelectedListener()
+    {
+
 
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item)
@@ -50,16 +55,17 @@ public class Main2Activity extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
-
+        setTitle("Home");
         mTextMessage = (TextView) findViewById(R.id.message);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new HomeFragment()).commit();
     }
 
 
     public void grievance(View view)
     {
-        Intent intent=new Intent(Main2Activity.this,GrievanceActivity.class);
+        Intent intent=new Intent(Main2Activity.this,GrievanceCategory.class);
         startActivity(intent);
     }
 }
