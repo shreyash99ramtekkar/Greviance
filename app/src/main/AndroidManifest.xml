@@ -9,6 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".RegisterGrievance"></activity>
+        <activity android:name=".GrievanceActivity" />
         <activity android:name=".ForgotPassword" />
         <activity
             android:name=".Main2Activity"
