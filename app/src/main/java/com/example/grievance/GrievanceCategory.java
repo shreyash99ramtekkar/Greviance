@@ -11,6 +11,7 @@ public class GrievanceCategory extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_grievance_category);
+//        setContentView(R.layout.home_fragmentlayout);
     }
     public void registerGrievance1(View view)
     {

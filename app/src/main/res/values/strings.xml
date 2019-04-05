@@ -95,5 +95,15 @@
         "when a user tries to pick up one of cards.\n\n"
     </string>
     <string name="action_settings">Settings</string>
+    <string name="water_category">Water</string>
+    <string name="help_category">Help</string>
+    <string name="health_category">Health</string>
+    <string name="energy_category">Energy</string>
+    <string name="sanitation_category">Sanitation</string>
+    <string name="education_category">Education</string>
+    <string name="infrastructure_category">Infrastructure</string>
+    <string name="others_category">Others</string>
+
     <string name="title_activity_scrolling">ScrollingActivity</string>
+
 </resources>

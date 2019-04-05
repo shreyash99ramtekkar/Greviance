@@ -9,4 +9,6 @@
     <dimen name="corner_radius">20dp</dimen>
     <dimen name="my_margin">8dp</dimen>
     <dimen name="my_margin2">3dp</dimen>
+    <dimen name="my_margin3">5dp</dimen>
+    <dimen name="zero">0dp</dimen>
 </resources>
