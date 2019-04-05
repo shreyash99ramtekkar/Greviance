@@ -4,7 +4,10 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -13,6 +16,10 @@ public class MainActivity extends AppCompatActivity
     private  static int SPLASH_TIMEOUT=4000;
     EditText uname,pass;
     TextView forg;
+    private RadioGroup radioLoginGroup;
+    private RadioButton radioLoginButton;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -64,9 +71,35 @@ public class MainActivity extends AppCompatActivity
         }
         else
         {
-            Intent i=new Intent(this,Main2Activity.class);
-            startActivity(i);
-            Toast.makeText(getApplicationContext(),"OK",Toast.LENGTH_SHORT).show();
+            radioLoginGroup = (RadioGroup) findViewById(R.id.logintype);
+            if (radioLoginGroup.getCheckedRadioButtonId() == -1)
+            {
+                // no radio buttons are checked
+            }
+            else
+            {
+                int selectedId=radioLoginGroup.getCheckedRadioButtonId();
+                radioLoginButton=(RadioButton)findViewById(selectedId);
+                if(radioLoginButton.getId()==R.id.Admin)
+                {
+                    Intent jumpAdmin = new Intent(this,Main2Activity.class);
+                    startActivity(jumpAdmin);
+
+                }
+                else
+                {
+                    Intent jumpUser = new Intent(this,GrievanceActivity.class);
+                    startActivity(jumpUser);
+
+                }
+
+
+
+
+
+            }
+
+
         }
     }
 
@@ -75,4 +108,26 @@ public class MainActivity extends AppCompatActivity
         Intent intent=new Intent(MainActivity.this, GrievanceCategory.class);
         startActivity(intent);
     }
+
+
+        /*public void onRadioButtonClicked(View view) {
+            // Is the button now checked?
+            boolean checked = ((RadioButton) view).isChecked();
+
+
+            // Check which radio button was clicked
+            switch(view.getId()) {
+                case R.id.User:
+                    if (checked)
+
+                        startActivity(jumpUser);
+
+                        break;
+                case R.id.Admin:
+                    if (checked)
+                        startActivity(jumpAdmin);
+                        break;
+            }
+        }*/
+
 }
